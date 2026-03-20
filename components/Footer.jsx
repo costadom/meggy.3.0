@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Instagram, Twitter, Youtube, Music } from 'lucide-react';
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
           
           {/* Column 1: Logo & Description */}
           <div className="lg:col-span-1 flex flex-col space-y-4">
-            <Link to="/" className="inline-block">
+            <Link href="/" className="inline-block">
               <span className="text-3xl font-bold text-white tracking-tight">
                 Meggy<span className="text-[#D946EF]">.</span>
               </span>
@@ -27,11 +27,11 @@ const Footer = () => {
           <div className="flex flex-col space-y-4">
             <h4 className="text-white font-bold text-lg mb-2">Plataforma</h4>
             <ul className="space-y-3">
-              <li><Link to="/" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Home</Link></li>
-              <li><Link to="/modelos" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Modelos</Link></li>
-              <li><Link to="/categorias" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Categorias</Link></li>
-              <li><Link to="/como-funciona" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Como funciona</Link></li>
-              <li><Link to="/cadastro-modelo" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Seja modelo</Link></li>
+              <li><Link href="/" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Home</Link></li>
+              <li><Link href="/modelos" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Modelos</Link></li>
+              <li><Link href="/categorias" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Categorias</Link></li>
+              <li><Link href="/como-funciona" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Como funciona</Link></li>
+              <li><Link href="/cadastro-modelo" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Seja modelo</Link></li>
             </ul>
           </div>
 
@@ -39,11 +39,11 @@ const Footer = () => {
           <div className="flex flex-col space-y-4">
             <h4 className="text-white font-bold text-lg mb-2">Suporte</h4>
             <ul className="space-y-3">
-              <li><Link to="/faq" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">FAQ</Link></li>
-              <li><Link to="/contato" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Contato</Link></li>
-              <li><Link to="/privacidade" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Políticas de privacidade</Link></li>
-              <li><Link to="/termos" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Termos de serviço</Link></li>
-              <li><Link to="/seguranca" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Segurança</Link></li>
+              <li><Link href="/faq" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">FAQ</Link></li>
+              <li><Link href="/contato" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Contato</Link></li>
+              <li><Link href="/privacidade" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Políticas de privacidade</Link></li>
+              <li><Link href="/termos" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Termos de serviço</Link></li>
+              <li><Link href="/seguranca" className="text-[#D1D5DB] hover:text-[#D946EF] transition-colors text-sm">Segurança</Link></li>
             </ul>
           </div>
 
@@ -94,7 +94,7 @@ const Footer = () => {
             © 2024 Meggy. Todos os direitos reservados. | Desenvolvido com ❤️
           </p>
           <Link 
-            to="/admin/login" 
+            href="/admin/login" 
             className="text-white/10 hover:text-white/40 transition-colors text-xs"
             title="Acesso Administrativo"
           >

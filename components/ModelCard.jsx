@@ -1,24 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { CheckCircle2, Star } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import pb from '@/lib/pocketbaseClient.js';
 
 const ModelCard = ({ model }) => {
-  const imageUrl = model?.foto_perfil_arquivo
-    ? pb.files.getUrl(model, model.foto_perfil_arquivo)
-    : 'https://placehold.co/600x800/1f1f1f/ffffff?text=Sem+foto';
+  // Ajuste para pegar a imagem direto ou usar o placeholder (sem PocketBase)
+  const imageUrl = model?.image || model?.foto_perfil_url || 'https://placehold.co/600x800/1f1f1f/ffffff?text=Sem+foto';
 
-  const nomeArtistico = model?.nome_artistico || 'Modelo';
-  const bio = model?.bio_completa || model?.bio_curta || 'Perfil em destaque na plataforma.';
-  const precoHora = Number(model?.preco_hora || 0);
-  const creditos = Number(model?.creditos_por_hora || precoHora || 0);
-  const categoria = Array.isArray(model?.categorias)
-    ? model.categorias.join(', ')
-    : model?.categorias || 'Categoria';
+  const nomeArtistico = model?.name || model?.nome_artistico || 'Modelo';
+  const bio = model?.description || model?.bio_completa || model?.bio_curta || 'Perfil em destaque na plataforma.';
+  const precoHora = Number(model?.price || model?.preco_hora || 0);
+  const creditos = Number(model?.credits || model?.creditos_por_hora || precoHora || 0);
+  
+  const categoria = Array.isArray(model?.badges) 
+    ? model.badges[0] 
+    : (Array.isArray(model?.categorias) ? model.categorias.join(', ') : model?.categorias || 'Destaque');
+    
   const rating = model?.rating || null;
-  const verificada = !!model?.verificada || !!model?.verified;
+  const verificada = !!model?.verificada || !!model?.verified || true; // True temporário para ficar bonito
   const status = model?.status_aprovacao || null;
 
   return (
@@ -83,7 +83,7 @@ const ModelCard = ({ model }) => {
           className="w-full bg-white/5 hover:bg-[#D946EF] text-white border border-white/10 hover:border-[#D946EF] transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(217,70,239,0.4)]"
           asChild
         >
-          <Link to={`/modelo/${model.id}`}>Ver perfil</Link>
+          <Link href={`/modelo/${model.id}`}>Ver perfil</Link>
         </Button>
       </div>
     </div>

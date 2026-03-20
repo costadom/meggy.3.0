@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import {
   Accordion,
@@ -8,7 +9,6 @@ import {
 
 const FAQSection = () => {
   const faqs = [
-    // Cadastro (2)
     {
       question: 'Como funciona o cadastro na plataforma?',
       answer: 'O cadastro é totalmente gratuito e rápido. Basta clicar em "Criar Conta", preencher seus dados básicos (nome, email, senha) e confirmar seu email. Após isso, você já pode navegar pelos perfis e comprar créditos.'
@@ -17,7 +17,6 @@ const FAQSection = () => {
       question: 'Preciso pagar alguma mensalidade para usar a Meggy?',
       answer: 'Não! A Meggy não cobra mensalidades ou taxas de assinatura dos clientes. Você paga apenas pelos créditos que comprar para utilizar nas sessões com as modelos.'
     },
-    // Créditos (3)
     {
       question: 'Como compro créditos e qual o valor?',
       answer: 'Após fazer login, acesse seu painel e clique em "Comprar Créditos". Oferecemos diversos pacotes com pagamento seguro via PIX ou cartão de crédito. O valor de 1 crédito equivale a R$ 1,00.'
@@ -30,7 +29,6 @@ const FAQSection = () => {
       question: 'Posso pedir reembolso dos meus créditos?',
       answer: 'O reembolso pode ser solicitado em até 7 dias após a compra, desde que os créditos não tenham sido utilizados em nenhuma sessão. Consulte nossos Termos de Serviço para mais detalhes.'
     },
-    // Agendamento (2)
     {
       question: 'Como faço para agendar uma sessão?',
       answer: 'Escolha a modelo desejada, clique em "Agendar", selecione um horário disponível na agenda dela e confirme. O valor em créditos será deduzido do seu saldo automaticamente.'
@@ -39,7 +37,6 @@ const FAQSection = () => {
       question: 'O que acontece se a modelo não comparecer?',
       answer: 'Se a modelo não comparecer no horário agendado, o valor integral da sessão em créditos será devolvido automaticamente para a sua carteira.'
     },
-    // Aprovação de Modelos (3)
     {
       question: 'Como as modelos são aprovadas na plataforma?',
       answer: 'Todas as modelos passam por um rigoroso processo de verificação de identidade. Exigimos o envio de documentos oficiais com foto e uma selfie segurando o documento para garantir a segurança de todos.'
