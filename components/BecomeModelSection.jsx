@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Clock, TrendingUp, Sliders, Headphones, Shield, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -60,7 +60,7 @@ const BecomeModelSection = () => {
                 className="bg-[#D946EF] hover:bg-[#c026d3] text-white font-bold px-8 py-7 text-lg rounded-xl shadow-[0_4px_20px_rgba(217,70,239,0.4)] hover:shadow-[0_8px_30px_rgba(217,70,239,0.6)] hover:-translate-y-1 transition-all duration-300 group"
                 asChild
               >
-                <Link to="/cadastro-modelo" className="flex items-center gap-2">
+                <Link href="/cadastro-modelo" className="flex items-center gap-2">
                   Quero ser modelo
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
